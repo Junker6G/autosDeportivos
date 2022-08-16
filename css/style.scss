@@ -410,7 +410,7 @@ body {
         align-items: flex-start;
         width: 80%;
         float: left;
-     
+        flex-wrap: wrap;
     }
 
     &__testimonio {
@@ -421,6 +421,7 @@ body {
         padding: 35px;
         padding-top: 10px;
         border-radius: 20px;
+        margin-right: 50px;
     }
 
     &__title{
