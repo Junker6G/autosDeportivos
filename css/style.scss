@@ -1,0 +1,460 @@
+@charset "UTF-8";
+
+:root {
+    --negro: #393939;
+    --tipo-principal: Helvetica, Arial, sans-serif;
+    --tipo-secundaria: Verdana;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --negro: #ececec;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        -webkit-animation: none !important;
+        animation: none !important;
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+p a {
+    display: inline;
+}
+
+li {
+    list-style-type: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+::-moz-selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+::selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+table,
+tr,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--tipo-principal);
+    color: var(--negro);
+    line-height: 1.4em;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// ================ FIN DEL RESET ================
+
+// COLORES
+
+$color-blanco: #fcefef;
+$color-verde: #10ffcb;
+$color-carbon: #353a47;
+$color-pear: #CFD11A;
+$color-azul: #1B98E0;
+
+// ESTLOS GENERALES
+
+body {
+    background-color: $color-blanco;
+}
+
+// ICONS
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48
+}
+
+
+// HEADER
+.header {
+    background-color: $color-carbon;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+
+
+    &__container {
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        width: 1100px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo:hover &__a {
+        color: $color-pear;
+    }
+
+    &__logo:hover &__icon {
+        color: $color-pear;
+    }
+
+    &__icon {
+        display: flex;
+        font-size: 40px;
+        transition: all 300ms;
+    }
+
+    &__h1 {
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    &__a {
+        display: block;
+        transition: all 300ms;
+    }
+
+    &__li {
+        float: left;
+        margin-left: 40px;
+        font-size: 18px;
+    }
+
+    &__a--nav {
+        display: block;
+        transition: all 300ms;
+    }
+
+    &__a--nav:hover {
+        color: $color-pear;
+    }
+}
+
+// BANNER
+
+.banner {
+    &__container {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        background-image: url('../img/banner.jpg');
+        margin-bottom: 100px;
+        animation: banner;
+        animation-duration: 100s;
+        animation-iteration-count: infinite;
+        box-shadow: 0px 2px 3px $color-carbon, 0px 3px 7px $color-carbon, 0px 4px 10px $color-carbon;
+    }
+
+    @keyframes banner {
+        0% {
+            background-position: 50% 30%;
+        }
+
+        50% {
+            background-position: 50% 100%;
+        }
+
+        100% {
+            background-position: 50% 30%;
+        }
+    }
+}
+
+// PRODUCTOS
+
+.producto {
+    display: flex;
+    width: 70%;
+    height: 200px;
+    margin-left: 7%;
+    margin-bottom: -70px;
+    padding: 2%;
+    background-color: $color-azul;
+    z-index: 1;
+    position: relative;
+
+    &__text {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    &__h1 {
+        text-shadow: 3px $color-carbon;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    &__p {
+        font-family: 'Lato', sans-serif;
+        font-size: 23px;
+        padding: 10px;
+        margin-left: 50px;
+        margin-top: 20px;
+        border-top: 1px solid $color-blanco;
+    }
+}
+
+// CARDS
+
+.cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    padding: 20px;
+    background-color: $color-carbon;
+    background-size: cover;
+    z-index: 2;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+    }
+
+    &__card {
+        width: 30%;
+        float: left;
+        margin: 20px;
+        box-shadow: 0px 2px 5px black;
+        background-color: $color-blanco;
+        transition: all 500ms;
+    }
+
+    &__img {
+        height: 300px;
+    }
+
+    &__text {
+        color: $color-carbon;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    &__h1 {
+        text-align: center;
+        line-height: 35px;
+        font-weight: 400;
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__info {
+        font-family: 'Lato', sans-serif;
+        height: 150px;
+        margin-bottom: 20px;
+        padding: 30px;
+    }
+
+    &__cost {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $color-pear;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    &__h1--cost {
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__h1--cost span {
+        font-size: 30px;
+    }
+
+    &__buy {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    &__buy span {
+        color: $color-carbon;
+        font-size: 40px;
+        border: 3px solid $color-carbon;
+        border-radius: 100px;
+        padding: 10px;
+        transition: all 200ms;
+    }
+
+    &__buy span:hover {
+        color: $color-blanco;
+        border: 3px solid $color-blanco;
+        background-color: $color-pear;
+        cursor: pointer;
+    }
+}
+
+// DATA
+
+.data {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    padding: 20px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 80%;
+        float: left;
+     
+    }
+
+    &__testimonio {
+        background-color: $color-pear;
+        float: left;
+        color: $color-carbon;
+        width: 40%;
+        padding: 35px;
+        padding-top: 10px;
+        border-radius: 20px;
+    }
+
+    &__title{
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 20px;
+    }
+
+    &__testimonio span{
+        float: left;
+        font-size: 40px;
+    }
+
+    &__h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        margin-left: 10px;
+    }
+
+    &__p{
+        font-family: 'Lato';
+        float: right;
+        width: 80%;
+        border-top: 2px solid $color-carbon;
+    }
+
+    &__blog {
+        float: left;
+    }
+
+    &__img {
+        height: 400px;
+    }
+
+    &__h1--blog {
+    }
+}
