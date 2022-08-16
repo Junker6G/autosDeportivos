@@ -424,13 +424,13 @@ body {
         margin-right: 50px;
     }
 
-    &__title{
+    &__title {
         display: flex;
         align-items: flex-end;
         margin-bottom: 20px;
     }
 
-    &__testimonio span{
+    &__testimonio span {
         float: left;
         font-size: 40px;
     }
@@ -441,7 +441,7 @@ body {
         margin-left: 10px;
     }
 
-    &__p{
+    &__p {
         font-family: 'Lato';
         float: right;
         width: 80%;
@@ -456,7 +456,5 @@ body {
         height: 400px;
     }
 
-    &__h1--blog {
-    
-    }
+    &__h1--blog {}
 }
