@@ -449,12 +449,38 @@ body {
     }
 
     &__blog {
-        float: left;
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        overflow: hidden;
     }
 
     &__img {
         height: 400px;
+        z-index: 2;
+        transition: all .5s;
     }
 
-    &__h1--blog {}
+    &__img:hover{
+        transform: translateX(40px);
+    }
+
+    &__image {}
+
+    &__img {}
+
+
+    &__h1--details {
+        background-color: $color-carbon;
+        position: absolute;
+        top: 160px;
+        left: -160px;
+        font-family: 'Roboto';
+        font-size: 40px;
+        padding: 30px;
+        padding-left: 100px;
+        padding-right: 100px;
+        transform: rotateZ(90deg);
+        z-index: 1;
+    }
 }
